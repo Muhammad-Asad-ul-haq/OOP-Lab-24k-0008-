@@ -1,68 +1,55 @@
-#include <stdio.h>
-#include <string.h>
-
-struct Player {
-    int ballScores[12];
-    char playerName[30];
-    int totalScore;
-};
-
-int validateScore(int score) {
-    return (score >= 0 && score <= 6);
-}
-
-void playGame(struct Player *player) {
-    printf("Enter the name of the player: ");
-    scanf("%s", player->playerName);
-
-    player->totalScore = 0;
-    for (int i = 0; i < 12; i++) {
-        int score;
-        do {
-            printf("Enter score for ball %d (0-6): ", i + 1);
-            scanf("%d", &score);
-        } while (!validateScore(score));
-
-        player->ballScores[i] = score;
-        player->totalScore += score;
-    }
-}
-
-void findWinner(struct Player player1, struct Player player2) {
-    printf("\nMatch Over!\n");
-
-    if (player1.totalScore > player2.totalScore) {
-        printf("%s wins with a score of %d!\n", player1.playerName, player1.totalScore);
-    } else if (player2.totalScore > player1.totalScore) {
-        printf("%s wins with a score of %d!\n", player2.playerName, player2.totalScore);
-    } else {
-        printf("It's a draw! Both players scored %d.\n", player1.totalScore);
-    }
-}
-
-void displayMatchScoreboard(struct Player player1, struct Player player2) {
-    printf("\nMatch Scoreboard:\n");
-
-    for (int i = 0; i < 2; i++) {
-        struct Player player = (i == 0) ? player1 : player2;
-        printf("\n%s's performance:\n", player.playerName);
-        for (int j = 0; j < 12; j++) {
-            printf("Ball %d: %d\n", j + 1, player.ballScores[j]);
-        }
-        printf("Total Score: %d\n", player.totalScore);
-        printf("Average Score: %.2f\n", (float)player.totalScore / 12);
-    }
-}
+#include <iostream>
+using namespace std;
 
 int main() {
-    struct Player player1, player2;
+    int pf,oop,dld,ict;
+    int total = 0;
+    float average;
 
-    printf("Welcome to Cricket Showdown!\n\n");
-    playGame(&player1);
-    playGame(&player2);
-
-    displayMatchScoreboard(player1, player2);
-    findWinner(player1, player2);
-
-    return 0;
+    cout << "Enter marks of PF: " ;
+    cin >> pf;
+    
+    cout << "Enter marks of OOP: " ;
+    cin >> oop;
+    
+    cout << "Enter marks of DLD: " ;
+    cin >> dld;
+    
+    cout << "Enter marks of ICT: " ;
+    cin >> ict;
+    
+    total=pf+oop+dld+ict;
+    cout << "Total marks are: " << total << endl;
+    
+    average=total/4;
+    cout << "Average is : " << average << endl;
+    
+    
+    
+  
+    if (average>=90 && average<=100) {
+        cout << "You have grade A" << endl;
+        return 0;
+       }
+       
+       if (average>=80 && average<=89) {
+        cout << "You have grade B" << endl;
+        return 0;
+       }
+       
+       if (average>=70 && average<=79) {
+        cout << "You have grade C" << endl;
+        return 0;
+       }
+       
+       if (average>=60 && average<=100) {
+        cout << "You have grade D" << endl;
+        return 0;
+       }
+       
+       else{
+           cout << "You have grade F" << endl;
+       }
+       
+return 0;
 }
