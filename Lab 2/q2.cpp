@@ -65,22 +65,3 @@ int main() {
     return 0;
 }
 
-q2.cpp
-Displaying q2.cpp.
-Lab 02 (In-Lab Tasks)
-Sameer Faisal
-•
-Jan 30 (Edited Jan 31)
-Due Jan 31, 10:30 AM
-Submit Q2 & Q3
-Class comments
-Your work
-Turned in
-
-q2.cpp
-Text
-
-q3.cpp
-Text
-Work cannot be turned in after the due date
-Private comments
