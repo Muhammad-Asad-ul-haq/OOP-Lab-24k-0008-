@@ -12,7 +12,7 @@ public:
         this->age = age;
     }
 
-    void display() const {
+    void display(){
         cout << "Name: " << name <<endl<< "Age: " << age << "\n";
     }
 };
@@ -28,7 +28,7 @@ public:
         this->gradeLevel = gradeLevel;
     }
 
-    void display() const {
+    void display() {
         Person::display();
         cout << "Student ID: " << studentID << "\nGrade Level: " << gradeLevel << "\n";
     }
@@ -45,7 +45,7 @@ public:
         this->roomNumber = roomNumber;
     }
 
-    void display() const {
+    void display() {
         Person::display();
         cout << "Subject: " << subject << ", Room Number: " << roomNumber << "\n";
     }
@@ -61,7 +61,7 @@ public:
         : student(name, age, studentID, gradeLevel),
           teacher(name, age, subject, roomNumber) {}
 
-    void display() const {
+    void display(){
         student.display();
         cout << "Teaching Subject: " << teacher.subject << ", Teaching Room: " << teacher.roomNumber << "\n";
     }
